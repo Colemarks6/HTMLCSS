@@ -1,0 +1,18 @@
+
+a:link {
+    color: #1a73e8;
+    text-decoration: none;
+}
+a:visited {
+    color: #ff0000;
+    text-decoration: none;
+}
+a:hover {
+    color: #48ff00;
+    text-decoration: underline;
+}
+a:focus {
+    color: #ffee00;
+    outline: 2px solid #ffa600;
+    text-decoration: underline;
+}
