@@ -1,0 +1,20 @@
+body {
+    background-color: #ffd3d3;
+    color: hsl(19, 76%, 48%);
+}
+
+h1 {
+    color: #570101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+    border-bottom: 2px solid #000000;
+}
+
+blockquote {
+    background-color: rgba(150, 129, 129, 0.7);
+    padding: 1em;
+    border-left: 20px solid blue;
+}
