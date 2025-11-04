@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="week6.css">
+    <title>Best Mac and Cheese Recpie</title>
+<li><a href="portfolio.html">Back to Portfolio</a></li>
+</head>
+<body>
+    <header>
+        <h1>Best Mac and Cheese</h1>
+    </header>
+    <header>
+        <h2>Ingredients</h2>
+    </header>
+    <main>
+<ul>
+    <li>16 oz elbow macaroni, cooked (or other tubular pasta)</li>
+    <li>1 tbsp extra virgin olive oil</li>
+    <li>6 tbsp unsalted butter</li>
+    <li>1/3 cup all purpose flour</li>
+    <li>3 cups whole milk</li>
+    <li>1 cup heavy whipping cream</li>
+    <li>4 cups sharp cheddar cheese shredded</li>
+    <li>2 cups Gruyere cheese shredded</li>
+    <li>salt and pepper to taste</li>
+    <li>1 1/2 cups panko crumbs</li>
+    <li>4 tbsp butter melted</li>
+    <li>1/2 cup Parmesan cheese shredded</li>
+    <li>1/4 tsp smoked paprika (or regular paprika)</li>
+</ul>
+<h2>Instructions</h2>
+<ol>
+    <li>Preheat oven to 350F. Lightly grease a large 3 qt or 4 qt baking dish and set aside. Combine shredded cheeses in a large bowl and set aside.</li>
+    <li>Cook the pasta one minute shy of al dente according to the package instructions. Remove from heat, drain, and place in a large bowl.</li>
+    <li>Drizzle pasta with olive oil and stir to coat pasta. Set aside to cool while preparing cheese sauce.</li>
+    <li>Melt butter in a deep saucepan, Dutch oven, or stock pot.</li>
+    <li>Whisk in flour over medium heat and continue whisking for about 1 minute until bubbly and golden.</li>
+    <li>Gradually whisk in the milk and heavy cream until nice and smooth. Continue whisking until you see bubbles on the surface and then continue cooking and whisking for another 2 minutes. Whisk in salt and pepper.</li>
+    <li>Add two cups of shredded cheese and whisk until smooth. Add another two cups of shredded cheese and continue whisking until creamy and smooth. Sauce should be nice and thick.</li>
+    <li>Stir in the cooled pasta until combined and pasta is fully coated with the cheese sauce.</li>
+    <li>Pour half of the mac and cheese into the prepared baking dish. Top with remaining 2 cups of shredded cheese and then the remaining mac and cheese.</li>
+    <li>In a small bowl, combine panko crumbs, Parmesan cheese, melted butter and paprika. Sprinkle over the top and bake until bubbly and golden brown, about 30 minutes. Serve immediately.</li>
+</ol>
+<!-- Really wanted to figure out an image carousel! I tried to make it sort of sweep in on load nad mouse hover, im sure this isn't how youd do it. However if youve got tips id love to hear them! -->
+
+<div class="carousel">
+    <div class="carousel-images">
+        <img src="Week6images/homemade-mac-and-cheese-733x1027.webp" alt="Mac and Cheese 1" class="active">
+        <img src="Week6images/homemade-baked-mac-and-cheese-733x1101.jpg" alt="Mac and Cheese 2">
+        <img src="Week6images/homemade-mac-and-cheese-recipe-panko-topping-733x489.jpg" alt="Mac and Cheese 3">
+    </div>
+</div>
+<script>
+const images = document.querySelectorAll('.carousel-images img');
+let current = 0;
+let interval;
+
+function showImage(idx, direction = 'left') {
+    images.forEach((img, i) => {
+        img.classList.remove('active', 'slide-in-right', 'slide-out-left', 'slide-in-left', 'slide-out-right');
+        if (i === idx) {
+            img.classList.add('active', direction === 'left' ? 'slide-in-right' : 'slide-in-left');
+        } else if (i === current) {
+            img.classList.add(direction === 'left' ? 'slide-out-left' : 'slide-out-right');
+        }
+    });
+}
+
+function nextImage() {
+    const next = (current + 1) % images.length;
+    showImage(next, 'left');
+    current = next;
+}
+
+function startCarousel() {
+    interval = setInterval(nextImage, 1100);
+}
+
+function stopCarousel() {
+    clearInterval(interval);
+}
+
+const carouselImages = document.querySelector('.carousel-images');
+carouselImages.addEventListener('mouseenter', startCarousel);
+carouselImages.addEventListener('mouseleave', stopCarousel);
+
+    showImage(current, 'left');
+</script>
+<style>
+    .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+    .carousel-images {
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+    .carousel-images img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    pointer-events: none;
+    transition: none;
+}
+    .carousel-images img.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+}
+    @keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+    @keyframes slideOutLeft {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(-100%); opacity: 0; }
+}
+    .carousel-images img.slide-in-right {
+    animation: slideInRight 0.6s forwards;
+    z-index: 2;
+}
+    .carousel-images img.slide-out-left {
+    animation: slideOutLeft 0.6s forwards;
+    z-index: 1;
+}
+</style>
+</script>
+    </main>
+    <footer>
+        <p><em>&copy; 2024 Cole M. </em></p>
+    </footer>
+</body>
+</html>
