@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Homepage — midterm project" />
+    <title>My Website — Home</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<picture class="hero-header-image">
+    <!-- Desktop -->
+    <source media="(min-width: 770px)"
+                    type="image/avif"
+                    srcset="-">
+    <source media="(min-width: 768px)"
+                    type="image/webp"
+                    srcset="-">
+
+    <!-- Mobile -->
+    <source media="(max-width: 760px)"
+                    type="image/avif"
+                    srcset="-">
+    <source media="(max-width: 767px)"
+                    type="image/webp"
+                    srcset="-">
+
+    <!-- Fallback img -->
+    <img src="-"
+             srcset="-"
+             alt="site hero image"
+             loading="lazy" decoding="async">
+
+            </picture>
+<body>
+    <div class="wrap">
+    <header>
+        <!-- created a space for a logo here, seems neat!-->
+        <div class="brand">
+            <span class="logo" aria-hidden="true"></span>
+    <div>
+        <strong>Midterm Project</strong><br />
+        <small class="muted">Below are many different applications of html and css</small>
+    </div>
+        </div>
+        <nav aria-label="Main navigation">
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </nav>
+    </header>
+
+<main>
+    <section>
+        <article class="card hero" role="region" aria-labelledby="hero-title">
+        <h1 id="hero-title">Welcome — Midterm Website</h1>
+        <p class="lead">This website was created for my midterm, above you will find links to different sections.</p>
+        </article>
+        </main>
+
+        <footer>
+            <div class="card footer-note">
+                <span id="year"></span> Midterm Website — Built with HTML and CSS.
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
