@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Quarterly Sales Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<nav>
+    <ul class="Nav-menu">
+        <li><a href="#Link1">Link1</a></li> <!--Added href for hyperlink capabilities -->
+        <li><a href="#Link2">Link2</a></li>
+        <li><a href="#Link3">Link3</a></li>
+        <li><a href="#Link4">Link4</a></li>
+    </ul>
+</nav>
+<body>
+    <div class="table-container">
+        <table class="example-table">
+            <caption>Quarterly Sales Report</caption><!--Has Caption-->
+            <thead><!--Has Thead-->
+                <tr><!--Header row with empty first cell, then Q1, Q2, and Q3-->
+                    <th></th>
+                    <!--Each have scope="col"-->
+                    <th scope="col">Q1</th>
+                    <th scope="col">Q2</th>
+                    <th scope="col">Q3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">examplescope</th>
+                    <td>exampledata</td>
+                    <td>exampledata</td>
+                    <td>exampledata</td>
+                </tr>
+                <tr>
+                    <th scope="row">examplescope</th>
+                    <td>exampledata</td>
+                    <td colspan="2">exampledata</td>
+                </tr>
+                <tr>
+                    <th scope="row">examplescope</th>
+                    <td>exampledata</td>
+                    <td>exampledata</td>
+                    <td>exampledata</td>
+                </tr>
+            </tbody><!--Has Tbody-->
+            <tfoot><!--Has Tfoot-->
+                <tr>
+                    <th scope="row">examplescope</th>
+                    <td colspan="3">exampletotals</td>
+                    <!--Show totals of data that isn't given? How?-->
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html><!-- AI still did not make this!!! -->

@@ -1,0 +1,65 @@
+
+.table-container {
+    overflow-x: auto;                     /* horizontally scrollable on small screens */
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(48, 48, 48, 0.2); /* subtle box shadow */
+}
+/* VERY Basic styling */
+.table-container table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: transparent;
+}
+/*Added separate styling for <th> and <td> elements, as well as all things below */
+.Nav-menu {
+    list-style: none;     
+    padding: 10px;           
+    display: flex;          /*Flexbox */
+    background-color: #ffffff; 
+}
+
+/*Style links as buttons */
+.Nav-menu li a {
+    display: block;                     
+    padding: 10px 20px;                                    
+    background-color: #80bcfc;
+    margin: auto 5px;
+    border-radius: 10%;
+    color: white;
+    transition: all 1s ease-in-out;   /*SUPER smooth transition*/
+}
+
+.Nav-menu li a:hover,
+.Nav-menu li a:focus {
+    background-color: #001a36;          /*Darker blue on hover */
+}
+
+
+.table-container td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: right; /*Right-align the text in all data <td> elements */
+    vertical-align: middle;
+    color: #222;
+}
+.table-container th {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: left; /*Left-align the text in all <th> elements */
+    vertical-align: middle;
+    color: #222;
+}
+.example-table tbody tr:nth-child(even) { /*I think odd rows would look better here \o/ */
+    background-color: #f2f2f2; /*Light gray for Zebra Strips */
+}
+.example-table tfoot tr {
+    background-color: #a1c2ff; 
+    font-weight: bold;
+}
+.example-table thead tr {
+    background-color: hsl(0, 100%, 85%); 
+    font-weight: bold;
+}
