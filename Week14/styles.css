@@ -1,0 +1,49 @@
+.magazine-layout {
+    display: grid;
+    grid-template-columns: minmax(12fr, 1fr);
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+        "header header header"
+        "main-image main-image sidebar sidebar"
+        "article article sidebar sidebar"
+        "footer footer footer footer";
+    padding: 20px;
+    gap: 20px;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-image {
+    grid-area: main-image;
+    grid-column: span 6;
+    grid-row: span 2;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+article {
+    grid-area: article;
+}
+
+footer {
+    grid-area: footer;
+}
+
+@media (max-width: 768px) {
+    .magazine-layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main-image"
+            "article"
+            "sidebar"
+            "footer";
+    }
+}
