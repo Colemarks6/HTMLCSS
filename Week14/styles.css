@@ -1,17 +1,25 @@
+.body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000000;
+}
+
 .magazine-layout {
     display: grid;
-    grid-template-columns: minmax(12fr, 1fr);
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: 1fr 100px 30px 100px;
+    grid-template-columns: minmax(150px 1fr);
     grid-template-areas:
-        "header header header"
-        "main-image main-image sidebar sidebar"
-        "article article sidebar sidebar"
-        "footer footer footer footer";
+        "header header"
+        "nav  article"
+        "article  sidebar"
+        "image .";
     padding: 20px;
     gap: 20px;
 }
+.nav{
+    grid-area: nav;
+}
 
-header {
+.h1 {
     grid-area: header;
     display: flex;
     justify-content: space-between;
@@ -19,21 +27,17 @@ header {
 }
 
 .main-image {
-    grid-area: main-image;
+    grid-area: image;
     grid-column: span 6;
     grid-row: span 2;
 }
 
-.sidebar {
+.pull-quote {
     grid-area: sidebar;
 }
 
-article {
+.article {
     grid-area: article;
-}
-
-footer {
-    grid-area: footer;
 }
 
 @media (max-width: 768px) {
