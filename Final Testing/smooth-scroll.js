@@ -1,3 +1,4 @@
+
 (() => {
   let current = window.scrollY;
   let target = window.scrollY;
@@ -16,7 +17,7 @@
     e.preventDefault();
   }, { passive: false });
 
-  // sidebar clicks
+  // sidebar
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
