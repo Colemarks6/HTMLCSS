@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scroll Effects</title>
-
     <link rel="stylesheet" href="styles.css">
-
     <script src="smooth-scroll.js"></script>
-
     </style>
 </head>
-<header>
-    <h1>The Rolling Pin</h1>
-<body>
 
-  <!-- PAGE 1 -->
+<header>
+    <h1 class="site-title">The Rolling Pin</h1>
+
+    <button class="waffle-menu" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+
+    <div id="waffleDropdown" class="waffle-dropdown">
+    </div>
+</header>
+
+<body>
+<!-- PAGE 1 -->
   <section class="wrap">
     <div class="panel panel-1">
         <div class="heroheader">
@@ -23,10 +32,11 @@
             <h1>One Treat at a Time.</h1>
         </div>
     </div>
-  </section>
 
-  <!-- PAGE 2 -->
-<section class="wrap">
+
+
+<!-- PAGE 2 -->
+  <section class="wrap">
     <div class="panel panel-2">
       <div class="grid">
         <a href="index.html" class="grid-item item1">
@@ -64,5 +74,10 @@
     </div>
   </section>
 
+  <section class="wrap">
+    <div class="panel panel-4">
+      <h2>&copy; 2024 The Rolling Pin. All rights reserved.</h2>
+    </div>
+  </section>
 </body>
 </html>
