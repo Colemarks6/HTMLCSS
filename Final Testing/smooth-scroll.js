@@ -1,44 +1,54 @@
 
 (() => {
-  let current = window.scrollY;
-  let target = window.scrollY;
+  let scrollCurrent = window.scrollY;
+  let scrollTarget = window.scrollY;
 
-  const wheelEase = 0.1;        // easing for wheel
-  const wheelMultiplier = 40;   // scale deltaY
-  const maxDelta = 120;         // max delta
-  let isDraggingScrollbar = false;
+  const ease = 0.1;
+  const scrollMultiplier = 40;
+  const maxScrollDelta = 120;
+  let draggingScrollbar = false;
 
-  // MWheel
+  // Smooth wheel scrolling
   window.addEventListener('wheel', e => {
-    if (isDraggingScrollbar) return;
+    if (draggingScrollbar) return;
 
-    const delta = Math.max(-maxDelta, Math.min(maxDelta, e.deltaY * wheelMultiplier));
-    target = Math.max(0, Math.min(target + delta, document.body.scrollHeight - window.innerHeight));
+    const delta = Math.max(-maxScrollDelta, Math.min(maxScrollDelta, e.deltaY * scrollMultiplier));
+    scrollTarget = Math.max(0, Math.min(scrollTarget + delta, document.body.scrollHeight - window.innerHeight));
     e.preventDefault();
   }, { passive: false });
 
-  // sidebar
+  // Smooth anchor link scrolling
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
-      const section = document.getElementById(link.getAttribute('href').slice(1));
-      if (section) target = Math.max(0, Math.min(section.offsetTop, document.body.scrollHeight - window.innerHeight));
+      const id = link.getAttribute('href').slice(1);
+      const section = document.getElementById(id);
+      if (section) {
+        scrollTarget = Math.max(0, Math.min(section.offsetTop, document.body.scrollHeight - window.innerHeight));
+      }
     });
   });
 
-  // Scrollbar
-  window.addEventListener('mousedown', e => { if (e.clientX > window.innerWidth - 20) isDraggingScrollbar = true; });
-  window.addEventListener('mouseup', () => { isDraggingScrollbar = false; current = target = window.scrollY; });
-  window.addEventListener('scroll', () => { if (isDraggingScrollbar) current = target = window.scrollY; });
+  // Detect scrollbar dragging
+  window.addEventListener('mousedown', e => {
+    if (e.clientX > window.innerWidth - 20) draggingScrollbar = true;
+  });
+  window.addEventListener('mouseup', () => {
+    draggingScrollbar = false;
+    scrollCurrent = scrollTarget = window.scrollY;
+  });
+  window.addEventListener('scroll', () => {
+    if (draggingScrollbar) scrollCurrent = scrollTarget = window.scrollY;
+  });
 
-  // Animation
-  const animate = () => {
-    if (!isDraggingScrollbar) {
-      current += (target - current) * wheelEase;
-      window.scrollTo(0, current);
+  // Animation loop
+  const smoothScroll = () => {
+    if (!draggingScrollbar) {
+      scrollCurrent += (scrollTarget - scrollCurrent) * ease;
+      window.scrollTo(0, scrollCurrent);
     }
-    requestAnimationFrame(animate);
+    requestAnimationFrame(smoothScroll);
   };
 
-  animate();
+  smoothScroll();
 })();
