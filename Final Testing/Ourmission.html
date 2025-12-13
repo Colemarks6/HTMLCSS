@@ -6,14 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scroll Effects</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="smooth-scroll.js"></script>
     </style>
 </head>
 
 <header>
   <span><h1>The Rolling Pin</h1></span>
   <button class="hamburger">&ni;</button>
-  <button class="cross">	&isin;</button>
   <div class="menu">
   <ul>
     <li><a href="index.html">HOME</a></li>
@@ -22,42 +20,6 @@
   </ul>
 </div> 
 </header>
-
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-<script>
-  // Hamburger Menu Script
-  // figuring out jQuery is a lot easier than vanilla JS... by a lot...
-$(document).ready(function () {
-
-    let animating = false;
-    $(".cross").hide();
-    $(".hamburger").click(function () 
-    {
-        if (animating) return;
-        animating = true; // Prevents spamming the button
-
-        $(".menu").animate({ right: "0px" }, 400, function () {
-            $(".hamburger").hide();
-            $(".cross").show();
-            animating = false;
-        });
-    });
-
-    $(".cross").click(function () 
-    {
-        if (animating) return;
-        animating = true;
-        $(".menu").animate({ right: "-420px" }, 400, function () {
-            $(".cross").hide();
-            $(".hamburger").show();
-
-            animating = false; // Re-enable button after animation
-        });
-    });
-
-});
-</script>
-<body>
 
 <!-- PAGE 1 -->
   <section class="wrap">

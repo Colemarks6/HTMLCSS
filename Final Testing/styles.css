@@ -14,7 +14,7 @@ header {
     box-shadow: 10px 20px 50px rgba(0,0,0,1);
 }
 
-.hamburger{
+.hamburger {
     position:absolute;
     background: none;
     top:13px;
@@ -27,37 +27,41 @@ header {
     cursor:pointer;
     outline:none;
     z-index:1;
+    transition: all 0.3s ease;
 }
-.cross{
-    position:absolute;
-    background: none;
-    top:13px;
-    right:350px;
-    padding:5px 15px 0px 15px;
-    color:#000000;
-    border:0;
-    font-size:2em;
-    line-height:45px;
-    cursor:pointer;
-    outline:none;
-    z-index:10;
+
+.hamburger:hover {
+    transform: scale(1.5);
 }
-.menu{
-  z-index:1; 
-  font-weight:bold; 
-  font-size:10em; 
+
+.menu {
+    font-family: 'times new roman', Times, serif; 
+  position: absolute;
+  top: 80px;
+  right: 0;
   width: 400px;
-  background:#f1f1f1;  
-  position:absolute; 
-  right:-420px;
-  text-align:left;
-  padding-left: 20px; 
-  font-size:20px;
-  top:80px;
+  background: #f1f1f1;
   box-shadow: 0 4px 20px rgba(0,0,0,.8);
+  transform: translateX(420px);
+  transition: all 0.3s ease;
+  pointer-events: none;
 }
+
+/*open menu*/
+.hamburger:focus ~ .menu {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+/*keep menu open when focused*/
+.menu:focus-within {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
   .menu ul {
+  font-family: 'times new roman', Times, serif; 
   list-style: none;
+  font-size:2em;
   margin: 0; 
   padding: 0; 
 }
@@ -76,13 +80,19 @@ header {
   .menu ul li a { 
     display:block;
     text-decoration:none;
-    padding: 15px 0;  
+    width: 400px;
+    padding: 15px 30px;  
     margin: 0px; 
     color:#000000;
-
     transition: all 0.3s ease;
 }
 
+@media (min-width: 600px) {
+  .menu {
+  display: flex;
+  gap: 2px;
+  }
+}
 
 header{
   display: flex;
