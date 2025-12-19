@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--Homepage: An engaging landing page. Must use a responsive layout (Flexbox or Grid).-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scroll Effects</title>
     <link rel="stylesheet" href="styles.css">
     </style>
 </head>
 
 <header>
   <h1 class="topheader">The Rolling Pin</h1>
-  <h2 class="viewmenu">View Menu </h2>
-  <button class="hamburger">&ni;</button>
+  <!--!!!If you use icons as links without text, they must have screen-reader-only text or an aria-label attribute.!!!-->
+  <button class="hamburger" aria-label="Toggle menu">&ni;</button> 
     <div class="menu">
     <ul>
       <li><a href="index.html">HOME</a></li>
@@ -39,25 +39,25 @@
   <section class="wrap">
     <div class="panel panel-2">
       <div class="grid">
-        <a href="shop.html" class="grid-item item1" role="img" label="Oops!">
+        <a href="shop.html#pastries" class="grid-item item1" role="img" label="Oops!">
         <div class="grid-content">
             <h2>PASTRIES</h2>
             <p>Every pastry at The Rolling Pin is a bite of joy. Using premium ingredients and expert techniques, we create sweet, flaky, and indulgent treats- think bold flavors, vibrant colors, and a touch of magic in every layer.</p>
         </div>
         </a>
-        <a href="shop.html" class="grid-item item2" role="img" label="Oops!">
+        <a href="shop.html#cookies" class="grid-item item2" role="img" label="Oops!">
           <div class="grid-content">
             <h2>COOKIES</h2>
             <p>Crispy edges, chewy centers, and flavors that linger—our cookies at The Rolling Pin are crafted to delight. Traditional favorites and innovative creations alike are baked fresh daily with love and top-quality ingredients.</p>
         </div>
         </a>
-        <a href="shop.html" class="grid-item item3" role="img" label="Oops!">
+        <a href="shop.html#cupcakes" class="grid-item item3" role="img" label="Oops!">
           <div class="grid-content">
             <h2>CUPCAKES</h2>
             <p>Tiny cakes, big flavor! At The Rolling Pin, our cupcakes are crafted with premium ingredients and endless creativity. From classic favorites to bold, imaginative flavors, each cupcake is a personal-sized celebration, topped with frosting, sprinkles, and a touch of magic.</p>
         </div>
         </a>
-        <a href="shop.html" class="grid-item item4" role="img" label="Oops!">
+        <a href="shop.html#breads" class="grid-item item4" role="img" label="Oops!">
           <div class="grid-content">
             <h2>BREADS</h2>
             <p>Nothing beats the smell of freshly baked bread. At The Rolling Pin Donuts, we craft artisan breads with care, from kneading to rising, so you can enjoy the warmth, texture, and flavor of a homemade loaf without the hassle.</p>
@@ -80,7 +80,7 @@
   </section>
 
   <section class="wrap">
-    <div class="panel panel-4" role="img" label="Oops!">
+    <div class="panel panel-4">
     <p>&copy; 2024 The Rolling Pin. All rights reserved. 123 Sweet St, Dessertville | (123) 456-7890 | 
        <a href="mailto:getmesweettreatso@therollingpin.com">getmesweettreats@therollingpin.com</a>
     </p>

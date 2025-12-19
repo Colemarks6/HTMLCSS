@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!--Services/Products Page: A page detailing offerings. Must use CSS Grid for the main layout of the product/service cards.-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scroll Effects</title>
     <link rel="stylesheet" href="styles.css">
 
     </style>
@@ -12,7 +11,7 @@
 
 <header>
   <h1 class="topheader">The Rolling Pin</h1>
-  <button class="hamburger">&ni;</button>
+  <button class="hamburger" aria-label="Toggle menu">&ni;</button>
   <div class="menu">
   <ul>
     <li><a href="index.html">HOME</a></li>
@@ -25,43 +24,61 @@
 <body>
 
 <!-- PAGE 1 -->
-  <section class="wrap">
+<section class="wrap">
     <div class="panel panel-1s" role="img" label="Oops!"></div>>
         <div class="heroheader">
             <h1>From Our Oven</h1>
             <h1>Straight To Your <em>Home</em></h1>
         </div>
     </div>
+</section>
 
 
 
 <!-- PAGE 2 -->
-  <section class="wrap">
-    <div class="panel panel-2s">
-<div class="shopgrid">
+<section class="wrap">
+  <div class="panel panel-2s">
+  <div class="shopgrid"> <!--!!! CSS Grid for most of the page !!!-->
   <!-- PASTRIES -->
-  <a href="checkout.html" class="shopgrid-item item3">
-    <div class="shopgrid-content">
-      <h2>Chocolate Pastry</h2>
-      <p>Flaky layers filled with chocolate</p>
-    </div>
-  </a>
+<a id="pastries" href="checkout.html" class="shopgrid-item">
 
-  <a href="checkout.html" class="shopgrid-item item3">
+  <div class="shopgrid-image">
+    <picture> <!--!!! Must use the <picture> element at least once. !!!-->
+      <img src="images/chocolatepastry.jpg" alt="Chocolate pastry with flaky layers">
+    </picture>
+  </div>
+
+  <div class="shopgrid-content">
+    <h2>Chocolate Pastry</h2>
+    <p>Flaky layers filled with chocolate</p>
+  </div>
+
+</a>
+
+  <a href="checkout.html" class="shopgrid-item">
+    <div class="shopgrid-image">
+    <img src="images/vanillapastry.jpg" alt="Vanilla Pastry">
+    </div>
     <div class="shopgrid-content">
       <h2>Vanilla Pastry</h2>
       <p>Light cream-filled pastry shell</p>
     </div>
   </a>
 
-  <a href="checkout.html" class="shopgrid-item item3">
+  <a href="checkout.html" class="shopgrid-item">
+    <div class="shopgrid-image">
+    <img src="images/strawberrypastry.jpg" alt="Strawberry Pastry">
+    </div>
     <div class="shopgrid-content">
       <h2>Strawberry Pastry</h2>
       <p>Fresh strawberry cream and glaze</p>
     </div>
   </a>
 
-  <a href="checkout.html" class="shopgrid-item item3">
+  <a href="checkout.html" class="shopgrid-item">
+    <div class="shopgrid-image">
+    <img src="images/almondpastry.jpg" alt="Almond Pastry">
+    </div>
     <div class="shopgrid-content">
       <h2>Almond Pastry</h2>
       <p>Toasted almonds and sweet filling</p>
@@ -69,28 +86,40 @@
   </a>
 
   <!-- COOKIES -->
-  <a href="checkout.html" class="shopgrid-item item2">
+  <a id="cookies" href="checkout.html" class="shopgrid-item">
+    <div class="shopgrid-image">
+    <img src="images/chocolatechipcookie.jpg" alt="Chocolate Chip Cookie">
+    </div>
     <div class="shopgrid-content">
       <h2>Chocolate Chip Cookie</h2>
       <p>Soft-baked with melted chocolate chips</p>
     </div>
   </a>
 
-  <a href="checkout.html" class="shopgrid-item item2">
+  <a href="checkout.html" class="shopgrid-item">
+    <div class="shopgrid-image">
+    <img src="images/OatmealRaisin.jpg" alt="Oatmeal Raisin Cookie">
+    </div>
     <div class="shopgrid-content">
       <h2>Oatmeal Raisin Cookie</h2>
       <p>Hearty oats with sweet raisins</p>
     </div>
   </a>
 
-  <a href="checkout.html" class="shopgrid-item item2">
+  <a href="checkout.html" class="shopgrid-item">
+    <div class="shopgrid-image">
+    <img src="images/pbcookie.jpg" alt="Peanut Butter Cookie">
+    </div>
     <div class="shopgrid-content">
       <h2>Peanut Butter Cookie</h2>
       <p>Classic crisscross, rich and nutty</p>
     </div>
   </a>
 
-  <a href="checkout.html" class="shopgrid-item item2">
+  <a href="checkout.html" class="shopgrid-item">
+    <div class="shopgrid-image">
+    <img src="images/sugarcookie.jpg" alt="Sugar Cookie">
+    </div>
     <div class="shopgrid-content">
       <h2>Sugar Cookie</h2>
       <p>Soft, sweet, and perfectly golden</p>
@@ -98,28 +127,40 @@
   </a>
 
   <!-- CUPCAKES -->
-  <a href="checkout.html" class="shopgrid-item item1">
+  <a id="cupcakes" href="checkout.html" class="shopgrid-item">
+    <div class="shopgrid-image">
+    <img src="images/ChocolateCupcake.jpg" alt="Chocolate Cupcake">
+    </div>
     <div class="shopgrid-content">
       <h2>Chocolate Cupcake</h2>
       <p>Rich cocoa cake with silky chocolate frosting</p>
     </div>
   </a>
 
-  <a href="checkout.html" class="shopgrid-item item1">
+  <a href="checkout.html" class="shopgrid-item">
+    <div class="shopgrid-image">
+    <img src="images/VanillaCupcake.jpg" alt="Vanilla Cupcake">
+    </div>
     <div class="shopgrid-content">
       <h2>Vanilla Cupcake</h2>
       <p>Classic vanilla sponge with buttercream</p>
     </div>
   </a>
 
-  <a href="checkout.html" class="shopgrid-item item1">
+  <a href="checkout.html" class="shopgrid-item">
+    <div class="shopgrid-image">
+    <img src="images/RedVelvetCupcake.jpg" alt="Red Velvet Cupcake">
+    </div>
     <div class="shopgrid-content">
       <h2>Red Velvet Cupcake</h2>
       <p>Velvety cocoa cake with cream cheese icing</p>
     </div>
   </a>
 
-  <a href="checkout.html" class="shopgrid-item item1">
+  <a href="checkout.html" class="shopgrid-item">
+    <div class="shopgrid-image">
+    <img src="images/LemonCupcake.jpg" alt="Lemon Cupcake">
+    </div>
     <div class="shopgrid-content">
       <h2>Lemon Cupcake</h2>
       <p>Light citrus cake with lemon glaze</p>
@@ -127,56 +168,66 @@
   </a>
 
   <!-- BREADS -->
-  <a href="checkout.html" class="shopgrid-item item4">
+  <a id="breads" href="checkout.html" class="shopgrid-item">
+    <div class="shopgrid-image">
+    <img src="images/sourdoughbread.jfif" alt="Sourdough Bread">
+    </div>
     <div class="shopgrid-content">
       <h2>Sourdough Bread</h2>
       <p>Slow-fermented with a crisp crust</p>
     </div>
   </a>
 
-  <a href="checkout.html" class="shopgrid-item item4">
+  <a href="checkout.html" class="shopgrid-item">
+    <div class="shopgrid-image">
+    <img src="images/briocheloaf.jpg" alt="Brioche Loaf">
+    </div>
     <div class="shopgrid-content">
       <h2>Brioche Loaf</h2>
       <p>Soft, buttery, and lightly sweet</p>
     </div>
   </a>
 
-  <a href="checkout.html" class="shopgrid-item item4">
+  <a href="checkout.html" class="shopgrid-item">
+    <div class="shopgrid-image">
+    <img src="images/wholewheatbread.jpeg" alt="Whole Wheat Bread">
+    </div>
     <div class="shopgrid-content">
       <h2>Whole Wheat Bread</h2>
       <p>Hearty and wholesome, baked fresh</p>
     </div>
   </a>
 
-  <a href="checkout.html" class="shopgrid-item item4">
+  <a href="checkout.html" class="shopgrid-item">
+    <div class="shopgrid-image">
+    <img src="images/frenchbaguette.avif" alt="French Baguette">
+    </div>
     <div class="shopgrid-content">
       <h2>French Baguette</h2>
       <p>Golden crust with airy interior</p>
     </div>
   </a>
-
-</div>
-      </div>
-    </div>
-  </section>
+  </div>
+  </div>
+</section>
 
   <!-- PAGE 3 -->
-  <section class="wrap">
+<section class="wrap">
     <div class="panel panel-3" role="img" label="Oops!">
       <div class="testimonials">
       <h2>What Our Customers Say</h2>
       <p><em>"I swear the pastries here must be baked by angels. The croissants practically melt in your mouth. I stop by every Friday and it’s become my favorite ritual of the week."</em><br> – Sarah M.</p>
       <p><em>"Their bread changed my life. I didn’t know sourdough could taste like that. Warm, tangy, perfect crust… I buy two every time because one disappears on the drive home."</em><br> – James L.</p>
       </div>
-  </section>
+</section>
 
-  </section>
-
-  <section class="wrap">
-    <div class="panel panel-4" role="img" label="Oops!">
-    <p>&copy; 2024 The Rolling Pin. All rights reserved. 123 Sweet St, Dessertville | (123) 456-7890 | 
-       <a href="mailto:getmesweettreatso@therollingpin.com">getmesweettreats@therollingpin.com</a>
+<section class="wrap">
+    <div class="panel panel-4">
+    <p>
+      &copy; 2024 The Rolling Pin. All rights reserved. 123 Sweet St, Dessertville | (123) 456-7890 | 
+      <a href="mailto:getmesweettreatso@therollingpin.com">getmesweettreats@therollingpin.com</a>
     </p>
   </div>
+</section>
 </body>
 </html>
