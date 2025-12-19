@@ -5,6 +5,7 @@ html, body {
 }
 
 header {
+    font-family: 'times new roman', Times, serif;
     position: fixed;
     top: 0;
     left: 0;
@@ -12,6 +13,37 @@ header {
     background: white;
     z-index: 1000;
     box-shadow: 10px 20px 50px rgba(0,0,0,1);
+}
+
+.topheader{
+    font-size: 2rem;
+    color: #000000;
+    text-align: left;
+    padding: 0;
+    position : relative;
+    left: 40px;
+    text-shadow: 
+            0 0 10px rgba(0, 0, 0, 0.4),
+            0 0 20px rgba(0, 0, 0, 0.4),
+            0 0 30px rgba(255, 255, 255, 0.4),
+            0 0 40px rgba(255, 255, 255, 0.4);
+}
+
+.viewmenu{
+    font-size: 1rem;
+    color: #000000;
+    text-align: right;
+    padding: 0;
+    position : absolute;
+    top: 20px;
+    right: 400px;
+    cursor: pointer;
+    text-shadow: 
+            0 0 10px rgba(0, 0, 0, 0.4),
+            0 0 20px rgba(0, 0, 0, 0.4),
+            0 0 30px rgba(255, 255, 255, 0.4),
+            0 0 40px rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
 }
 
 .hamburger {
@@ -30,12 +62,15 @@ header {
     transition: all 0.3s ease;
 }
 
-.hamburger:hover {
-    transform: scale(1.5);
+header:hover .hamburger, 
+header:hover .viewmenu 
+{
+    transform: scale(1.2);
 }
 
+
 .menu {
-    font-family: 'times new roman', Times, serif; 
+  font-family: 'times new roman', Times, serif; 
   position: absolute;
   top: 80px;
   right: 0;
@@ -48,6 +83,7 @@ header {
 }
 
 /*open menu*/
+.viewmenu:focus ~ .menu,
 .hamburger:focus ~ .menu {
   transform: translateX(0);
   pointer-events: auto;
@@ -59,17 +95,12 @@ header {
 }
 
   .menu ul {
-  font-family: 'times new roman', Times, serif; 
   list-style: none;
   font-size:2em;
   margin: 0; 
   padding: 0; 
 }
-  .menu li {
-  font-family: 'times new roman', Times, serif; 
-  border-bottom:#e2e2e2 
-  1px solid;
-}
+
   .menu li a:hover{
   display: block;    
   background:#ffffff; 
@@ -123,7 +154,6 @@ span{
 
 .panel {
     height: 110vh;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,6 +163,19 @@ span{
 
     filter: contrast(100%);
 
+  animation: flyIn 0.8s cubic-bezier(0.25,0.1,0.25,1) both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 25%;
+}
+
+.panel-1s {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: white;
+    overflow: hidden;
   animation: flyIn 0.8s cubic-bezier(0.25,0.1,0.25,1) both;
   animation-timeline: view();
   animation-range: entry 0% cover 25%;
@@ -161,6 +204,11 @@ span{
           0 0 20px rgba(255, 255, 255, 0.4),
           0 0 30px rgba(0, 0, 0, 0.4),
           0 0 40px rgba(0, 0, 0, 0.4);
+}
+
+.panel-2s {
+    height: 200vh;
+    color: rgb(0, 0, 0)
 }
 
 .panel-4 {
@@ -257,33 +305,71 @@ a {
   box-shadow: 0 8px 15px rgba(0,0,0,0.15);
 }
 
-.scroll-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    display: none; /* hidden by default */
-    width: 50px;
-    height: 50px;
-    background: #acacac;
-    color: white;
-    font-size: 24px;
-    text-align: center;
-    line-height: 50px;
-    border-radius: 50%;
-    text-decoration: none;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+
+/*Shop grid*/
+.shopgrid {
+  display: grid;
+  width: 90%;
+  height: 90%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);   
+  gap: 100px 20px;
+  justify-content: center;
 }
 
-.scroll-top:hover {
-    background: #5588cc;
-    transform: translateY(-3px);
+/*allow for styles*/
+a {
+  text-decoration: none;
+  color: inherit;
 }
-body:target .scroll-top {
-    display: block;
+
+/*Shop grid items*/
+.shopgrid-item {
+  background: #ffffff;
+  color: #000000;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  box-shadow: 10px 40px 10px rgba(0,0,0,0.5);
+  transition: transform 1s ease, box-shadow 1s ease;
 }
-.scroll-top {
-    display: block; /* visible all the time */
+
+.shopgrid-content {
+  background: rgb(255, 255, 255);
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 10px 40px 10px rgba(0,0,0,0.5);
+  transition: transform 1s ease, box-shadow 1s ease;
+  text-shadow: 
+            0 0 20px rgba(0, 0, 0, 0.4),
+            0 0 30px rgba(255, 255, 255, 0.4),
+            0 0 40px rgba(255, 255, 255, 0.4);
+}
+
+.shopgrid-content h2 {
+    margin: 0 0 10px;
+    font-size: 2.5rem;
+}
+
+.shopgrid-content p {
+  margin: 10;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.shopgrid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+.grid-content:hover
+{
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
 }
 
 /* panel 3*/
@@ -317,11 +403,20 @@ body:target .scroll-top {
 .panel-1 { 
   background: url('images/bread4.jpg') center/cover no-repeat;
 }
+
 .panel-1m { 
   background: url('images/missionp1.jpg') center/cover no-repeat;
 }
 
+.panel-1s { 
+  background: url('images/shophero.jpg') top/cover no-repeat;
+}
+
 .panel-2 { 
+  background: rgb(255, 255, 255)
+}
+
+.panel-2s { 
   background: rgb(255, 255, 255)
 }
 
@@ -347,4 +442,103 @@ body:target .scroll-top {
 }
 .item4 {
   background: url('images/breads.jpg') center/cover no-repeat;
+}
+
+/*smaller screens*/
+@media (max-width: 1100px) and (min-width: 0px) {
+
+  html, body {
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 10px 0;
+  }
+
+  .topheader {
+    font-size: 1.5rem;
+  }
+
+  span {
+    padding-left: 0;
+    margin-left: 20px;
+    display: block;
+    font-size: 0.9rem;
+  }
+
+  .viewmenu {
+    right: 70px;
+    top: 18px;
+    font-size: 0.9rem;
+  }
+
+  .hamburger {
+    right: 20px;
+    top: 10px;
+    font-size: 1.8rem;
+  }
+
+  .menu {
+    width: 50%;
+    transform: translateX(100%);
+    top: 70px;
+  }
+
+  .menu ul {
+    font-size: 1.4rem;
+  }
+
+  .menu ul li a {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .heroheader {
+    font-size: 2rem;
+    margin-top: -60px;
+    margin-left: -200px;
+    line-height: 1.1;
+  }
+
+  .panel {
+    height: 80vh;
+    font-size: 2rem;
+  }
+
+  .panel-2,
+  .panel-2s {
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .panel-2m p {
+    position: static;
+    margin: 20px;
+    padding: 20px;
+    font-size: 1.4rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    height: auto;
+  }
+
+  .grid-content {
+    padding: 25px;
+  }
+
+  .grid-content h2 {
+    font-size: 2rem;
+  }
+
+  .testimonials {
+    position: static;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .testimonials p {
+    font-size: 1.8rem;
+  }
 }
